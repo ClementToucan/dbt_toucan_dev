@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      dataset: dbt_clement_msika
+      timeout_seconds: 300
+      method: service-account
+      keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+      priority: interactive
+      project: data-finance-staging
+      threads: 4
+      type: bigquery
