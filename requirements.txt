@@ -1,0 +1,4 @@
+dbt-bigquery==1.7.0
+dbt-core==1.7.0
+dbt-extractor==0.5.0
+shandy-sqlfmt[jinjafmt]

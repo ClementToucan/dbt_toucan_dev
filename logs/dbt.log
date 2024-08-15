@@ -1,0 +1,1732 @@
+[0m12:16:38.438332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1027b3d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042e82e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042fd880>]}
+
+
+============================== 12:16:38.440525 | 37a0bd87-f4d2-4675-a8c5-09ec39d16d8d ==============================
+[0m12:16:38.440525 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:16:38.440800 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:16:38.441071 [info ] [MainThread]: dbt version: 1.7.0
+[0m12:16:38.441220 [info ] [MainThread]: python version: 3.9.6
+[0m12:16:38.441365 [info ] [MainThread]: python path: /Users/clementmsika/Documents/virtual_envs/dbt/bin/python3
+[0m12:16:38.441508 [info ] [MainThread]: os info: macOS-14.6-arm64-arm-64bit
+[0m12:16:38.684644 [info ] [MainThread]: Using profiles dir at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:16:38.684903 [info ] [MainThread]: Using profiles.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/profiles.yml
+[0m12:16:38.685066 [info ] [MainThread]: Using dbt_project.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/dbt_project.yml
+[0m12:16:38.685332 [info ] [MainThread]: adapter type: bigquery
+[0m12:16:38.685519 [info ] [MainThread]: adapter version: 1.7.0
+[0m12:16:38.722710 [info ] [MainThread]: Configuration:
+[0m12:16:38.722926 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:16:38.723079 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:16:38.723225 [info ] [MainThread]: Required dependencies:
+[0m12:16:38.723402 [debug] [MainThread]: Executing "git --help"
+[0m12:16:38.741950 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:16:38.742337 [debug] [MainThread]: STDERR: "b''"
+[0m12:16:38.742509 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:16:38.742670 [info ] [MainThread]: Connection:
+[0m12:16:38.742869 [info ] [MainThread]:   method: service-account
+[0m12:16:38.743011 [info ] [MainThread]:   database: data-finance-staging
+[0m12:16:38.743151 [info ] [MainThread]:   execution_project: data-finance-staging
+[0m12:16:38.743287 [info ] [MainThread]:   schema: dbt_dev
+[0m12:16:38.743424 [info ] [MainThread]:   location: EU
+[0m12:16:38.743558 [info ] [MainThread]:   priority: interactive
+[0m12:16:38.743692 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:16:38.743826 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:16:38.743959 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:16:38.744092 [info ] [MainThread]:   job_retries: 1
+[0m12:16:38.744224 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:16:38.744356 [info ] [MainThread]:   job_execution_timeout_seconds: 30000
+[0m12:16:38.744489 [info ] [MainThread]:   keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+[0m12:16:38.744621 [info ] [MainThread]:   timeout_seconds: 30000
+[0m12:16:38.744753 [info ] [MainThread]:   refresh_token: None
+[0m12:16:38.744884 [info ] [MainThread]:   client_id: None
+[0m12:16:38.745015 [info ] [MainThread]:   token_uri: None
+[0m12:16:38.745145 [info ] [MainThread]:   dataproc_region: None
+[0m12:16:38.745277 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:16:38.745411 [info ] [MainThread]:   gcs_bucket: None
+[0m12:16:38.745546 [info ] [MainThread]:   dataproc_batch: None
+[0m12:16:38.745782 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:16:38.748691 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:16:38.749067 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:16:38.750710 [debug] [MainThread]: On debug: select 1 as id
+[0m12:16:40.793339 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:71620ee0-a6ae-4e4b-8b4f-c9d3356b3732&page=queryresults
+[0m12:16:41.537958 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:16:41.538900 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:16:41.542630 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:16:41.543163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1027b3d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051a9640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105170b80>]}
+[0m12:16:41.543766 [debug] [MainThread]: Flushing usage events
+[0m12:35:56.231331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070d3100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bb6c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bf5f10>]}
+
+
+============================== 12:35:56.233899 | 9c0630a9-5bee-405f-9fed-d6fbd65d66f7 ==============================
+[0m12:35:56.233899 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:35:56.234187 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m12:35:56.234456 [info ] [MainThread]: dbt version: 1.7.0
+[0m12:35:56.234605 [info ] [MainThread]: python version: 3.9.6
+[0m12:35:56.234744 [info ] [MainThread]: python path: /Users/clementmsika/Documents/virtual_envs/dbt/bin/python3
+[0m12:35:56.234882 [info ] [MainThread]: os info: macOS-14.6-arm64-arm-64bit
+[0m12:35:57.117577 [info ] [MainThread]: Using profiles dir at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:35:57.117856 [info ] [MainThread]: Using profiles.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/profiles.yml
+[0m12:35:57.118018 [info ] [MainThread]: Using dbt_project.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/dbt_project.yml
+[0m12:35:57.118360 [info ] [MainThread]: adapter type: bigquery
+[0m12:35:57.118552 [info ] [MainThread]: adapter version: 1.7.0
+[0m12:35:57.157607 [info ] [MainThread]: Configuration:
+[0m12:35:57.158082 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:35:57.158256 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:35:57.158405 [info ] [MainThread]: Required dependencies:
+[0m12:35:57.158613 [debug] [MainThread]: Executing "git --help"
+[0m12:35:57.188785 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:35:57.189340 [debug] [MainThread]: STDERR: "b''"
+[0m12:35:57.189537 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:35:57.189709 [info ] [MainThread]: Connection:
+[0m12:35:57.189932 [info ] [MainThread]:   method: service-account
+[0m12:35:57.190078 [info ] [MainThread]:   database: data-finance-staging
+[0m12:35:57.190222 [info ] [MainThread]:   execution_project: data-finance-staging
+[0m12:35:57.190359 [info ] [MainThread]:   schema: dbt_dev
+[0m12:35:57.190494 [info ] [MainThread]:   location: EU
+[0m12:35:57.190630 [info ] [MainThread]:   priority: interactive
+[0m12:35:57.190767 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:35:57.190901 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:35:57.191036 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:35:57.191260 [info ] [MainThread]:   job_retries: 1
+[0m12:35:57.191396 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:35:57.191530 [info ] [MainThread]:   job_execution_timeout_seconds: 30000
+[0m12:35:57.191667 [info ] [MainThread]:   keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+[0m12:35:57.191910 [info ] [MainThread]:   timeout_seconds: 30000
+[0m12:35:57.192071 [info ] [MainThread]:   refresh_token: None
+[0m12:35:57.192211 [info ] [MainThread]:   client_id: None
+[0m12:35:57.192353 [info ] [MainThread]:   token_uri: None
+[0m12:35:57.192543 [info ] [MainThread]:   dataproc_region: None
+[0m12:35:57.192736 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:35:57.192880 [info ] [MainThread]:   gcs_bucket: None
+[0m12:35:57.193019 [info ] [MainThread]:   dataproc_batch: None
+[0m12:35:57.193341 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:35:57.200807 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:35:57.201927 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:35:57.204601 [debug] [MainThread]: On debug: select 1 as id
+[0m12:35:58.223642 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:6911d185-7480-458b-a50e-b5698e9ae21b&page=queryresults
+[0m12:35:58.585637 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:35:58.587055 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:35:58.592229 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:35:58.592880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070d3100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b19490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109afa040>]}
+[0m12:35:58.593498 [debug] [MainThread]: Flushing usage events
+[0m12:36:10.667189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10495b100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106441ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10647f730>]}
+
+
+============================== 12:36:10.669390 | de157b96-08cd-4ad5-84ea-e1861a4c10dd ==============================
+[0m12:36:10.669390 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:36:10.669659 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'debug': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:36:10.930407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'de157b96-08cd-4ad5-84ea-e1861a4c10dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10644b5e0>]}
+[0m12:36:10.974000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'de157b96-08cd-4ad5-84ea-e1861a4c10dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107351bb0>]}
+[0m12:36:10.974507 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:36:10.980556 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m12:36:10.982199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10495b100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10742de20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10742d8e0>]}
+[0m12:36:10.982545 [debug] [MainThread]: Flushing usage events
+[0m12:39:04.424022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c7f310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103a9c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103bcca0>]}
+
+
+============================== 12:39:04.426348 | be250fa2-8b2a-4ad4-a879-39aa23aa8f0f ==============================
+[0m12:39:04.426348 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:39:04.426636 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m12:39:04.426908 [info ] [MainThread]: dbt version: 1.7.0
+[0m12:39:04.427061 [info ] [MainThread]: python version: 3.9.6
+[0m12:39:04.427202 [info ] [MainThread]: python path: /Users/clementmsika/Documents/virtual_envs/dbt/bin/python3
+[0m12:39:04.427343 [info ] [MainThread]: os info: macOS-14.6-arm64-arm-64bit
+[0m12:39:04.661559 [info ] [MainThread]: Using profiles dir at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:39:04.661811 [info ] [MainThread]: Using profiles.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/profiles.yml
+[0m12:39:04.661976 [info ] [MainThread]: Using dbt_project.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/dbt_project.yml
+[0m12:39:04.662244 [info ] [MainThread]: adapter type: bigquery
+[0m12:39:04.662427 [info ] [MainThread]: adapter version: 1.7.0
+[0m12:39:04.697068 [info ] [MainThread]: Configuration:
+[0m12:39:04.697262 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:39:04.697415 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:39:04.697557 [info ] [MainThread]: Required dependencies:
+[0m12:39:04.697754 [debug] [MainThread]: Executing "git --help"
+[0m12:39:04.719863 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:39:04.720286 [debug] [MainThread]: STDERR: "b''"
+[0m12:39:04.720463 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:39:04.720625 [info ] [MainThread]: Connection:
+[0m12:39:04.720840 [info ] [MainThread]:   method: service-account
+[0m12:39:04.720986 [info ] [MainThread]:   database: data-finance-staging
+[0m12:39:04.721125 [info ] [MainThread]:   execution_project: data-finance-staging
+[0m12:39:04.721261 [info ] [MainThread]:   schema: dbt_dev
+[0m12:39:04.721397 [info ] [MainThread]:   location: EU
+[0m12:39:04.721532 [info ] [MainThread]:   priority: interactive
+[0m12:39:04.721669 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:39:04.721805 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:39:04.721941 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:39:04.722078 [info ] [MainThread]:   job_retries: 1
+[0m12:39:04.722214 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:39:04.722349 [info ] [MainThread]:   job_execution_timeout_seconds: 30000
+[0m12:39:04.722485 [info ] [MainThread]:   keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+[0m12:39:04.722620 [info ] [MainThread]:   timeout_seconds: 30000
+[0m12:39:04.722754 [info ] [MainThread]:   refresh_token: None
+[0m12:39:04.722890 [info ] [MainThread]:   client_id: None
+[0m12:39:04.723026 [info ] [MainThread]:   token_uri: None
+[0m12:39:04.723160 [info ] [MainThread]:   dataproc_region: None
+[0m12:39:04.723295 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:39:04.723429 [info ] [MainThread]:   gcs_bucket: None
+[0m12:39:04.723561 [info ] [MainThread]:   dataproc_batch: None
+[0m12:39:04.723800 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:39:04.726858 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:39:04.727255 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:39:04.728675 [debug] [MainThread]: On debug: select 1 as id
+[0m12:39:05.394620 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:ccb941b9-7fbf-4ebf-9255-0abb94158d58&page=queryresults
+[0m12:39:05.840302 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:39:05.841689 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:39:05.846042 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:39:05.846666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c7f310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1114defa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1113d88e0>]}
+[0m12:39:05.847344 [debug] [MainThread]: Flushing usage events
+[0m12:40:45.541886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047fbc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062e1520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10631f3d0>]}
+
+
+============================== 12:40:45.544520 | df1af3c6-b185-4196-9702-6fa9649adb76 ==============================
+[0m12:40:45.544520 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:40:45.544815 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:40:45.820408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'df1af3c6-b185-4196-9702-6fa9649adb76', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10712b1f0>]}
+[0m12:40:45.860119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'df1af3c6-b185-4196-9702-6fa9649adb76', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071cf610>]}
+[0m12:40:45.860486 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:40:45.864134 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m12:40:45.865411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047fbc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072f4190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072f4ac0>]}
+[0m12:40:45.865658 [debug] [MainThread]: Flushing usage events
+[0m12:41:42.553242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cd3310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a6ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087f79d0>]}
+
+
+============================== 12:41:42.555799 | 91fafefa-4ed6-4920-979c-2a2db0eac654 ==============================
+[0m12:41:42.555799 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:41:42.556094 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m12:41:42.826428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '91fafefa-4ed6-4920-979c-2a2db0eac654', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a63d0>]}
+[0m12:41:42.866499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '91fafefa-4ed6-4920-979c-2a2db0eac654', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10971e790>]}
+[0m12:41:42.866911 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:41:42.870358 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m12:41:42.871545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cd3310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097b5e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097b5220>]}
+[0m12:41:42.871811 [debug] [MainThread]: Flushing usage events
+[0m12:42:46.542340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052e71c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103115490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e0b7c0>]}
+
+
+============================== 12:42:46.544694 | 390158a6-4b8d-43ec-9818-a1219461f36b ==============================
+[0m12:42:46.544694 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:42:46.544995 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:42:46.820771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '390158a6-4b8d-43ec-9818-a1219461f36b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106dd8580>]}
+[0m12:42:46.860681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '390158a6-4b8d-43ec-9818-a1219461f36b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c283a0>]}
+[0m12:42:46.861049 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:42:46.864725 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m12:42:46.865951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052e71c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ddfdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ddf310>]}
+[0m12:42:46.866182 [debug] [MainThread]: Flushing usage events
+[0m12:43:05.295741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103203310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d11c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d26ca0>]}
+
+
+============================== 12:43:05.298146 | daeab913-acb2-44c9-87be-dee9203b2bbb ==============================
+[0m12:43:05.298146 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:43:05.298442 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt deps', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:43:05.338904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'daeab913-acb2-44c9-87be-dee9203b2bbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d26ca0>]}
+[0m12:43:05.340364 [debug] [MainThread]: Set downloads directory='/var/folders/j6/zyq444291mjfdns9m0wd42wc0000gn/T/dbt-downloads-sw8ub27n'
+[0m12:43:05.340637 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:43:06.033263 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:43:06.034669 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:43:06.081717 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:43:06.098028 [info ] [MainThread]: Updating lock file in file path: /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/package-lock.yml
+[0m12:43:06.099561 [debug] [MainThread]: Set downloads directory='/var/folders/j6/zyq444291mjfdns9m0wd42wc0000gn/T/dbt-downloads-itk8pkp6'
+[0m12:43:06.104215 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:43:06.766772 [info ] [MainThread]: Installed from version 1.1.1
+[0m12:43:06.767063 [info ] [MainThread]: Updated version available: 1.2.0
+[0m12:43:06.767291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'daeab913-acb2-44c9-87be-dee9203b2bbb', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d9d460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104cec130>]}
+[0m12:43:06.767539 [info ] [MainThread]: 
+[0m12:43:06.767723 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:43:06.769065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103203310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1010776d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d1ce20>]}
+[0m12:43:06.769292 [debug] [MainThread]: Flushing usage events
+[0m12:44:45.400143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102dff1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053b2b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053ed580>]}
+
+
+============================== 12:44:45.402714 | 862ce145-7367-4cee-9eab-ad11a626569c ==============================
+[0m12:44:45.402714 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:44:45.402989 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt deps', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:44:45.448070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '862ce145-7367-4cee-9eab-ad11a626569c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053f84c0>]}
+[0m12:44:45.449136 [debug] [MainThread]: Set downloads directory='/var/folders/j6/zyq444291mjfdns9m0wd42wc0000gn/T/dbt-downloads-uasgbuwt'
+[0m12:44:45.449369 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:44:45.522246 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:44:45.522632 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:44:45.564122 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:44:45.567925 [error] [MainThread]: Encountered an error:
+Could not find a matching compatible version for package dbt-labs/dbt_utils
+  Requested range: =1.2.1, =1.2.1
+  Compatible versions: ['0.0.1', '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7', '0.1.8', '0.1.9', '0.1.10', '0.1.11', '0.1.12', '0.1.13', '0.1.14', '0.1.15', '0.1.16', '0.1.17', '0.1.18', '0.1.19', '0.1.20', '0.1.21', '0.1.22', '0.1.23', '0.1.24', '0.1.25', '0.2.0', '0.2.1', '0.2.2', '0.2.3', '0.2.4', '0.2.5', '0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.8.0', '0.8.1', '0.8.2', '0.8.3', '0.8.4', '0.8.5', '0.8.6', '0.9.0', '0.9.1', '0.9.2', '0.9.5', '0.9.6', '1.0.0', '1.1.0', '1.1.1', '1.2.0']
+
+  Not shown: package versions incompatible with installed version of dbt-core
+  To include them, run 'dbt --no-version-check deps'
+[0m12:44:45.569516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102dff1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054d6f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054d6610>]}
+[0m12:44:45.569801 [debug] [MainThread]: Flushing usage events
+[0m12:45:42.699898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102d871c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10485ab50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104892580>]}
+
+
+============================== 12:45:42.702407 | 29c721f1-7da4-4e9a-bc0a-620f93fa8672 ==============================
+[0m12:45:42.702407 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:45:42.702686 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt deps', 'send_anonymous_usage_stats': 'True'}
+[0m12:45:42.747430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '29c721f1-7da4-4e9a-bc0a-620f93fa8672', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048a04c0>]}
+[0m12:45:42.748661 [debug] [MainThread]: Set downloads directory='/var/folders/j6/zyq444291mjfdns9m0wd42wc0000gn/T/dbt-downloads-uucv7czf'
+[0m12:45:42.748892 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:45:43.031124 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:45:43.032502 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:45:43.077764 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:45:43.092561 [info ] [MainThread]: Updating lock file in file path: /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/package-lock.yml
+[0m12:45:43.118267 [debug] [MainThread]: Set downloads directory='/var/folders/j6/zyq444291mjfdns9m0wd42wc0000gn/T/dbt-downloads-utg0w1u7'
+[0m12:45:43.121312 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:45:43.915431 [info ] [MainThread]: Installed from version 1.2.0
+[0m12:45:43.915715 [info ] [MainThread]: Up to date!
+[0m12:45:43.915939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '29c721f1-7da4-4e9a-bc0a-620f93fa8672', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100bfb670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10497e1f0>]}
+[0m12:45:43.917381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102d871c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10498c250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10492f640>]}
+[0m12:45:43.917605 [debug] [MainThread]: Flushing usage events
+[0m12:46:21.300408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10526bc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d3e4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d8de20>]}
+
+
+============================== 12:46:21.302733 | beefe446-3afc-470d-98d4-7b1ea20da378 ==============================
+[0m12:46:21.302733 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:46:21.303013 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:46:21.303292 [info ] [MainThread]: dbt version: 1.7.0
+[0m12:46:21.303435 [info ] [MainThread]: python version: 3.9.6
+[0m12:46:21.303575 [info ] [MainThread]: python path: /Users/clementmsika/Documents/virtual_envs/dbt/bin/python3
+[0m12:46:21.303712 [info ] [MainThread]: os info: macOS-14.6-arm64-arm-64bit
+[0m12:46:21.542090 [info ] [MainThread]: Using profiles dir at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:46:21.542344 [info ] [MainThread]: Using profiles.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/profiles.yml
+[0m12:46:21.542507 [info ] [MainThread]: Using dbt_project.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/dbt_project.yml
+[0m12:46:21.542777 [info ] [MainThread]: adapter type: bigquery
+[0m12:46:21.542961 [info ] [MainThread]: adapter version: 1.7.0
+[0m12:46:21.577687 [info ] [MainThread]: Configuration:
+[0m12:46:21.577900 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:46:21.578053 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:46:21.578200 [info ] [MainThread]: Required dependencies:
+[0m12:46:21.578389 [debug] [MainThread]: Executing "git --help"
+[0m12:46:21.599063 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:46:21.599502 [debug] [MainThread]: STDERR: "b''"
+[0m12:46:21.599677 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:46:21.599859 [info ] [MainThread]: Connection:
+[0m12:46:21.600065 [info ] [MainThread]:   method: service-account
+[0m12:46:21.600211 [info ] [MainThread]:   database: data-finance-staging
+[0m12:46:21.600348 [info ] [MainThread]:   execution_project: data-finance-staging
+[0m12:46:21.600487 [info ] [MainThread]:   schema: dbt_dev
+[0m12:46:21.600623 [info ] [MainThread]:   location: EU
+[0m12:46:21.600758 [info ] [MainThread]:   priority: interactive
+[0m12:46:21.600896 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:46:21.601032 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:46:21.601168 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:46:21.601302 [info ] [MainThread]:   job_retries: 1
+[0m12:46:21.601435 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:46:21.601569 [info ] [MainThread]:   job_execution_timeout_seconds: 30000
+[0m12:46:21.601703 [info ] [MainThread]:   keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+[0m12:46:21.601837 [info ] [MainThread]:   timeout_seconds: 30000
+[0m12:46:21.601967 [info ] [MainThread]:   refresh_token: None
+[0m12:46:21.602100 [info ] [MainThread]:   client_id: None
+[0m12:46:21.602232 [info ] [MainThread]:   token_uri: None
+[0m12:46:21.602366 [info ] [MainThread]:   dataproc_region: None
+[0m12:46:21.602499 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:46:21.602632 [info ] [MainThread]:   gcs_bucket: None
+[0m12:46:21.602764 [info ] [MainThread]:   dataproc_batch: None
+[0m12:46:21.603010 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:46:21.605950 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:46:21.606333 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:46:21.607796 [debug] [MainThread]: On debug: select 1 as id
+[0m12:46:21.970627 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:66ed1bd9-ba15-433a-a6b6-0857e4b65fcb&page=queryresults
+[0m12:46:22.262795 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:46:22.264170 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:46:22.268704 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:46:22.269394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10526bc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107baa520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103cacf70>]}
+[0m12:46:22.270132 [debug] [MainThread]: Flushing usage events
+[0m12:46:39.623638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048ebd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063e8520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106437ee0>]}
+
+
+============================== 12:46:39.626052 | 02fc4d2c-f00c-4953-bd08-e08a768d0fc7 ==============================
+[0m12:46:39.626052 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:46:39.626351 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:46:39.889028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063e8a30>]}
+[0m12:46:39.928962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10735d8b0>]}
+[0m12:46:39.929318 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:46:39.939969 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m12:46:39.940387 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:46:39.940578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073cbac0>]}
+[0m12:46:40.612938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077770d0>]}
+[0m12:46:40.618677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077778e0>]}
+[0m12:46:40.618911 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m12:46:40.619086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073f50d0>]}
+[0m12:46:40.619723 [info ] [MainThread]: 
+[0m12:46:40.620101 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:46:40.620608 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m12:46:40.620810 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:46:41.704373 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_dev)
+[0m12:46:41.705377 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:46:42.480232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107245c70>]}
+[0m12:46:42.480958 [info ] [MainThread]: Concurrency: 4 threads (target='bigquery')
+[0m12:46:42.481229 [info ] [MainThread]: 
+[0m12:46:42.483833 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m12:46:42.484195 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_dev.dim_date_bis .............................. [RUN]
+[0m12:46:42.484708 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_dev, now model.toucan_toco_dbt.dim_date_bis)
+[0m12:46:42.484971 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m12:46:42.496245 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:46:42.496919 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 12:46:42.485127 => 12:46:42.496776
+[0m12:46:42.497154 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m12:46:42.520533 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:46:42.521135 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:46:42.522497 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "bigquery", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_dev`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m12:46:43.457658 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:525de6b4-9d28-4df8-8bc8-cc4b83548b03&page=queryresults
+[0m12:46:43.460381 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:525de6b4-9d28-4df8-8bc8-cc4b83548b03&page=queryresults
+[0m12:46:43.461526 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 12:46:42.497291 => 12:46:43.461148
+[0m12:46:43.502070 [debug] [Thread-1  ]: Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_dev: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_dev (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:46:43.502446 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '02fc4d2c-f00c-4953-bd08-e08a768d0fc7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107856d00>]}
+[0m12:46:43.502860 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model dbt_dev.dim_date_bis ..................... [[31mERROR[0m in 1.02s]
+[0m12:46:43.503257 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m12:46:43.504341 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:46:43.504578 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m12:46:43.504795 [info ] [MainThread]: 
+[0m12:46:43.504999 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 2.88 seconds (2.88s).
+[0m12:46:43.505392 [debug] [MainThread]: Command end result
+[0m12:46:43.512210 [info ] [MainThread]: 
+[0m12:46:43.512428 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:46:43.512607 [info ] [MainThread]: 
+[0m12:46:43.512790 [error] [MainThread]:   Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_dev: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_dev (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:46:43.512972 [info ] [MainThread]: 
+[0m12:46:43.513167 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:46:43.514111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048ebd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063e8a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075e7700>]}
+[0m12:46:43.514345 [debug] [MainThread]: Flushing usage events
+[0m12:49:46.045765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10279f310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104272ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042c39d0>]}
+
+
+============================== 12:49:46.048521 | 1da3bdec-f029-4a76-ab41-8a6228601ee6 ==============================
+[0m12:49:46.048521 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:49:46.048820 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:49:46.321273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042af9a0>]}
+[0m12:49:46.361216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ad1f70>]}
+[0m12:49:46.361594 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:49:46.373166 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m12:49:46.404908 [debug] [MainThread]: Partial parsing enabled: 21 files deleted, 0 files added, 0 files changed.
+[0m12:49:46.405163 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_last_x_month.sql
+[0m12:49:46.405311 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_ytd.sql
+[0m12:49:46.405451 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/utils/norm_text.sql
+[0m12:49:46.405586 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/url/extract_domain.sql
+[0m12:49:46.405721 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/utils/add_dbt_last_run_ts.sql
+[0m12:49:46.405853 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/legacy/date_in_last_year.sql
+[0m12:49:46.406051 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/format_date.sql
+[0m12:49:46.406196 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/utils/add_instance_freshness_flags.sql
+[0m12:49:46.406329 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/currency/convert_currency.sql
+[0m12:49:46.406460 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_is_last_day_of_period.sql
+[0m12:49:46.406589 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_current_period.sql
+[0m12:49:46.406718 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/analytics_convert_date.sql
+[0m12:49:46.406846 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/salesloft_tmp/salesloft_assign_group.sql
+[0m12:49:46.406977 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_after_current_period.sql
+[0m12:49:46.407105 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/utils/classify_jira_status.sql
+[0m12:49:46.407233 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_l12m.sql
+[0m12:49:46.407363 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_next_period.sql
+[0m12:49:46.407490 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_is_last_period_day.sql
+[0m12:49:46.407618 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/legacy/date_next_quarter.sql
+[0m12:49:46.407754 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/salesforce/set_use_case_category.sql
+[0m12:49:46.407883 [debug] [MainThread]: Partial parsing: deleted file: toucan_toco_dbt://macros/date/date_in_last_period.sql
+[0m12:49:46.479337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10569efa0>]}
+[0m12:49:46.485175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053fa310>]}
+[0m12:49:46.485382 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 563 macros, 0 groups, 0 semantic models
+[0m12:49:46.485552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053eb280>]}
+[0m12:49:46.486190 [info ] [MainThread]: 
+[0m12:49:46.486545 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:49:46.487017 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m12:49:46.487219 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:49:47.143708 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_dev)
+[0m12:49:47.144591 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:49:47.736048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052305b0>]}
+[0m12:49:47.736967 [info ] [MainThread]: Concurrency: 4 threads (target='bigquery')
+[0m12:49:47.737292 [info ] [MainThread]: 
+[0m12:49:47.739610 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m12:49:47.740048 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_dev.dim_date_bis .............................. [RUN]
+[0m12:49:47.740623 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_dev, now model.toucan_toco_dbt.dim_date_bis)
+[0m12:49:47.740917 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m12:49:47.752441 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 12:49:47.741096 => 12:49:47.752246
+[0m12:49:47.764341 [debug] [Thread-1  ]: Compilation Error in model dim_date_bis (models/dim_date_bis.sql)
+  'format_date_quarter' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m12:49:47.764589 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1da3bdec-f029-4a76-ab41-8a6228601ee6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105795a60>]}
+[0m12:49:47.764905 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model dbt_dev.dim_date_bis ..................... [[31mERROR[0m in 0.02s]
+[0m12:49:47.765205 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m12:49:47.766117 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:49:47.766316 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m12:49:47.766505 [info ] [MainThread]: 
+[0m12:49:47.766704 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.28 seconds (1.28s).
+[0m12:49:47.767035 [debug] [MainThread]: Command end result
+[0m12:49:47.773114 [info ] [MainThread]: 
+[0m12:49:47.773322 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:49:47.773485 [info ] [MainThread]: 
+[0m12:49:47.773648 [error] [MainThread]:   Compilation Error in model dim_date_bis (models/dim_date_bis.sql)
+  'format_date_quarter' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m12:49:47.773813 [info ] [MainThread]: 
+[0m12:49:47.773995 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:49:47.775313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10279f310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042c40a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054e4f40>]}
+[0m12:49:47.775524 [debug] [MainThread]: Flushing usage events
+[0m12:50:02.956931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106eb31c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ce1490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089d67c0>]}
+
+
+============================== 12:50:02.959228 | 7b6cda33-2084-4a77-9612-0655285ebf17 ==============================
+[0m12:50:02.959228 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:50:02.959507 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:50:03.226501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108973f40>]}
+[0m12:50:03.266559 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091ec160>]}
+[0m12:50:03.266940 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:50:03.277626 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m12:50:03.307722 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 21 files added, 0 files changed.
+[0m12:50:03.308024 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/utils/classify_jira_status.sql
+[0m12:50:03.308198 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_l12m.sql
+[0m12:50:03.308357 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_next_period.sql
+[0m12:50:03.308513 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_current_period.sql
+[0m12:50:03.308668 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_is_last_day_of_period.sql
+[0m12:50:03.308821 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/salesforce/set_use_case_category.sql
+[0m12:50:03.308974 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/analytics_convert_date.sql
+[0m12:50:03.309124 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_after_current_period.sql
+[0m12:50:03.309279 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/utils/norm_text.sql
+[0m12:50:03.309433 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/currency/convert_currency.sql
+[0m12:50:03.309588 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_last_x_month.sql
+[0m12:50:03.309739 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_last_period.sql
+[0m12:50:03.309891 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/utils/add_dbt_last_run_ts.sql
+[0m12:50:03.310044 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/url/extract_domain.sql
+[0m12:50:03.310203 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/legacy/date_next_quarter.sql
+[0m12:50:03.310352 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/utils/add_instance_freshness_flags.sql
+[0m12:50:03.310500 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_in_ytd.sql
+[0m12:50:03.310651 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/format_date.sql
+[0m12:50:03.310799 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/date/date_is_last_period_day.sql
+[0m12:50:03.310947 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/legacy/date_in_last_year.sql
+[0m12:50:03.311107 [debug] [MainThread]: Partial parsing: added file: toucan_toco_dbt://macros/salesloft_tmp/salesloft_assign_group.sql
+[0m12:50:03.330805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c3e0d0>]}
+[0m12:50:03.337010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109aef610>]}
+[0m12:50:03.337217 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m12:50:03.337392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109aef910>]}
+[0m12:50:03.338069 [info ] [MainThread]: 
+[0m12:50:03.338437 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:50:03.338922 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m12:50:03.339120 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:50:04.408660 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_dev)
+[0m12:50:04.409580 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:50:05.265185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099cb490>]}
+[0m12:50:05.265846 [info ] [MainThread]: Concurrency: 4 threads (target='bigquery')
+[0m12:50:05.266097 [info ] [MainThread]: 
+[0m12:50:05.267881 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m12:50:05.268235 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_dev.dim_date_bis .............................. [RUN]
+[0m12:50:05.268712 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_dev, now model.toucan_toco_dbt.dim_date_bis)
+[0m12:50:05.268957 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m12:50:05.286496 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:50:05.286965 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 12:50:05.269104 => 12:50:05.286835
+[0m12:50:05.287173 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m12:50:05.309220 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:50:05.309675 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:50:05.310615 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "bigquery", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_dev`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m12:50:06.282565 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:88ef8dc8-0560-44e0-b51c-7d44ce716c66&page=queryresults
+[0m12:50:06.286443 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:88ef8dc8-0560-44e0-b51c-7d44ce716c66&page=queryresults
+[0m12:50:06.287623 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 12:50:05.287294 => 12:50:06.287241
+[0m12:50:06.327906 [debug] [Thread-1  ]: Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_dev: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_dev (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:50:06.328310 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7b6cda33-2084-4a77-9612-0655285ebf17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cbe070>]}
+[0m12:50:06.328728 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model dbt_dev.dim_date_bis ..................... [[31mERROR[0m in 1.06s]
+[0m12:50:06.329128 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m12:50:06.330295 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:50:06.330525 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m12:50:06.330734 [info ] [MainThread]: 
+[0m12:50:06.330949 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 2.99 seconds (2.99s).
+[0m12:50:06.331360 [debug] [MainThread]: Command end result
+[0m12:50:06.337907 [info ] [MainThread]: 
+[0m12:50:06.338156 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:50:06.338339 [info ] [MainThread]: 
+[0m12:50:06.338523 [error] [MainThread]:   Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_dev: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_dev (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:50:06.338710 [info ] [MainThread]: 
+[0m12:50:06.338915 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:50:06.340344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106eb31c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091ec160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109bdfcd0>]}
+[0m12:50:06.340578 [debug] [MainThread]: Flushing usage events
+[0m12:50:39.596065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063a3d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ea0250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eed160>]}
+
+
+============================== 12:50:39.598365 | b9ee6917-df0a-49f6-a875-251625c07230 ==============================
+[0m12:50:39.598365 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:50:39.598645 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug --config-dir', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:50:39.598916 [info ] [MainThread]: To view your profiles.yml file, run:
+
+open /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:50:39.599796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063a3d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ee6b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eba730>]}
+[0m12:50:39.599963 [debug] [MainThread]: Flushing usage events
+[0m12:51:52.556806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d031c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102b31490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068277c0>]}
+
+
+============================== 12:51:52.559639 | c95d75ab-ddfb-4ede-a193-e9170dff50d0 ==============================
+[0m12:51:52.559639 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:51:52.559937 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:51:52.834401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067c3d90>]}
+[0m12:51:52.874281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107761940>]}
+[0m12:51:52.874649 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:51:52.885482 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m12:51:52.892731 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:51:52.892937 [info ] [MainThread]: Unable to do partial parsing because env vars used in profiles.yml have changed
+[0m12:51:52.893111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10775bb80>]}
+[0m12:51:53.551015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b86fd0>]}
+[0m12:51:53.556995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b86790>]}
+[0m12:51:53.557204 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m12:51:53.557371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10782fc70>]}
+[0m12:51:53.557957 [info ] [MainThread]: 
+[0m12:51:53.558308 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:51:53.558759 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m12:51:53.558957 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:51:54.059452 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_clement_msika)
+[0m12:51:54.060485 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:51:54.329142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b8dbe0>]}
+[0m12:51:54.330652 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:51:54.331205 [info ] [MainThread]: 
+[0m12:51:54.335174 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m12:51:54.335899 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_clement_msika.dim_date_bis .................... [RUN]
+[0m12:51:54.336880 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_clement_msika, now model.toucan_toco_dbt.dim_date_bis)
+[0m12:51:54.337466 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m12:51:54.353456 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:51:54.354354 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 12:51:54.337767 => 12:51:54.354145
+[0m12:51:54.354670 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m12:51:54.381662 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m12:51:54.382284 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:51:54.383383 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "dev", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_clement_msika`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m12:51:54.952434 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:abdc6a4c-4c82-48cd-b650-f98e64977b06&page=queryresults
+[0m12:51:54.956849 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:abdc6a4c-4c82-48cd-b650-f98e64977b06&page=queryresults
+[0m12:51:54.957879 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 12:51:54.354849 => 12:51:54.957565
+[0m12:51:54.994811 [debug] [Thread-1  ]: Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_clement_msika: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_clement_msika (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:51:54.995172 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c95d75ab-ddfb-4ede-a193-e9170dff50d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c9efd0>]}
+[0m12:51:54.995573 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model dbt_clement_msika.dim_date_bis ........... [[31mERROR[0m in 0.66s]
+[0m12:51:54.995965 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m12:51:54.997063 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:51:54.997307 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m12:51:54.997531 [info ] [MainThread]: 
+[0m12:51:54.997757 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.44 seconds (1.44s).
+[0m12:51:54.998159 [debug] [MainThread]: Command end result
+[0m12:51:55.005086 [info ] [MainThread]: 
+[0m12:51:55.005309 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:51:55.005486 [info ] [MainThread]: 
+[0m12:51:55.005667 [error] [MainThread]:   Database Error in model dim_date_bis (models/dim_date_bis.sql)
+  Access Denied: Dataset data-finance-staging:dbt_clement_msika: Permission bigquery.tables.create denied on dataset data-finance-staging:dbt_clement_msika (or it may not exist).
+  compiled Code at target/run/toucan_toco_dbt/models/dim_date_bis.sql
+[0m12:51:55.005849 [info ] [MainThread]: 
+[0m12:51:55.006038 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:51:55.007310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d031c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067c3d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077d0250>]}
+[0m12:51:55.007537 [debug] [MainThread]: Flushing usage events
+[0m12:58:15.901180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066a3040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081b01f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081c57f0>]}
+
+
+============================== 12:58:15.903518 | 528f8ddb-babb-446e-816e-085e663f7cd5 ==============================
+[0m12:58:15.903518 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:58:15.903795 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'debug': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m12:58:15.904071 [info ] [MainThread]: dbt version: 1.7.0
+[0m12:58:15.904221 [info ] [MainThread]: python version: 3.9.6
+[0m12:58:15.904365 [info ] [MainThread]: python path: /Users/clementmsika/Documents/virtual_envs/dbt/bin/python3
+[0m12:58:15.904508 [info ] [MainThread]: os info: macOS-14.6-arm64-arm-64bit
+[0m12:58:16.133814 [info ] [MainThread]: Using profiles dir at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt
+[0m12:58:16.134069 [info ] [MainThread]: Using profiles.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/profiles.yml
+[0m12:58:16.134231 [info ] [MainThread]: Using dbt_project.yml file at /Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/dbt_project.yml
+[0m12:58:16.134496 [info ] [MainThread]: adapter type: bigquery
+[0m12:58:16.134682 [info ] [MainThread]: adapter version: 1.7.0
+[0m12:58:16.169168 [info ] [MainThread]: Configuration:
+[0m12:58:16.169360 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:58:16.169510 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:58:16.169652 [info ] [MainThread]: Required dependencies:
+[0m12:58:16.169838 [debug] [MainThread]: Executing "git --help"
+[0m12:58:16.185258 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:58:16.185683 [debug] [MainThread]: STDERR: "b''"
+[0m12:58:16.185857 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:58:16.186015 [info ] [MainThread]: Connection:
+[0m12:58:16.186225 [info ] [MainThread]:   method: service-account
+[0m12:58:16.186367 [info ] [MainThread]:   database: data-finance-staging
+[0m12:58:16.186503 [info ] [MainThread]:   execution_project: data-finance-staging
+[0m12:58:16.186639 [info ] [MainThread]:   schema: dbt_clement_msika
+[0m12:58:16.186775 [info ] [MainThread]:   location: None
+[0m12:58:16.186909 [info ] [MainThread]:   priority: interactive
+[0m12:58:16.187042 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:58:16.187176 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:58:16.187311 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:58:16.187444 [info ] [MainThread]:   job_retries: 1
+[0m12:58:16.187576 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:58:16.187709 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m12:58:16.187842 [info ] [MainThread]:   keyfile: /Users/clementmsika/desktop/github/cred/dbt-user-creds.json
+[0m12:58:16.187976 [info ] [MainThread]:   timeout_seconds: 300
+[0m12:58:16.188108 [info ] [MainThread]:   refresh_token: None
+[0m12:58:16.188239 [info ] [MainThread]:   client_id: None
+[0m12:58:16.188369 [info ] [MainThread]:   token_uri: None
+[0m12:58:16.188502 [info ] [MainThread]:   dataproc_region: None
+[0m12:58:16.188633 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:58:16.188766 [info ] [MainThread]:   gcs_bucket: None
+[0m12:58:16.188898 [info ] [MainThread]:   dataproc_batch: None
+[0m12:58:16.189136 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:58:16.192113 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:58:16.192470 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:58:16.193864 [debug] [MainThread]: On debug: select 1 as id
+[0m12:58:17.009617 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:US:253be22b-1ad6-46bf-91f1-9648b7a05c5b&page=queryresults
+[0m12:58:17.850502 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:58:17.851921 [info ] [MainThread]: [32mAll checks passed![0m
+[0m12:58:17.855890 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:58:17.856530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066a3040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108fdc100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109073610>]}
+[0m12:58:17.857230 [debug] [MainThread]: Flushing usage events
+[0m12:59:59.631267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043871c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1021b5490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105eab7c0>]}
+
+
+============================== 12:59:59.633967 | 583c8c49-0c1a-418f-aed2-158b41d298a3 ==============================
+[0m12:59:59.633967 [info ] [MainThread]: Running with dbt=1.7.0
+[0m12:59:59.634251 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:59:59.910407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e46d90>]}
+[0m12:59:59.950288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ccf6d0>]}
+[0m12:59:59.950662 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m12:59:59.962027 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m12:59:59.996861 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:59:59.997074 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:00:00.000125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070fd0d0>]}
+[0m13:00:00.007318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fc0220>]}
+[0m13:00:00.007545 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m13:00:00.007720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fc0370>]}
+[0m13:00:00.008418 [info ] [MainThread]: 
+[0m13:00:00.008792 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:00:00.009296 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m13:00:00.009505 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:00:01.752988 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_clement_msika)
+[0m13:00:01.753904 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:00:02.496571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cc4f70>]}
+[0m13:00:02.498359 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:00:02.498918 [info ] [MainThread]: 
+[0m13:00:02.503124 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m13:00:02.503916 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_clement_msika.dim_date_bis .................... [RUN]
+[0m13:00:02.504882 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_clement_msika, now model.toucan_toco_dbt.dim_date_bis)
+[0m13:00:02.505362 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m13:00:02.533730 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:00:02.534811 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 13:00:02.505671 => 13:00:02.534610
+[0m13:00:02.535107 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m13:00:02.561206 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:00:02.561686 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m13:00:02.562759 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "dev", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_clement_msika`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m13:00:03.791511 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:76b845fa-d9ec-4cbf-a956-299bad9cb758&page=queryresults
+[0m13:00:06.272134 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 13:00:02.535276 => 13:00:06.271849
+[0m13:00:06.273515 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '583c8c49-0c1a-418f-aed2-158b41d298a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10719ebb0>]}
+[0m13:00:06.274227 [info ] [Thread-1  ]: 1 of 1 OK created sql table model dbt_clement_msika.dim_date_bis ............... [[32mCREATE TABLE (5.7k rows, 0 processed)[0m in 3.77s]
+[0m13:00:06.274891 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m13:00:06.276548 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:00:06.276895 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m13:00:06.277215 [info ] [MainThread]: 
+[0m13:00:06.277539 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.27 seconds (6.27s).
+[0m13:00:06.278173 [debug] [MainThread]: Command end result
+[0m13:00:06.289003 [info ] [MainThread]: 
+[0m13:00:06.289317 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:00:06.289549 [info ] [MainThread]: 
+[0m13:00:06.289798 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:00:06.291552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043871c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e46d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102dc8f70>]}
+[0m13:00:06.291844 [debug] [MainThread]: Flushing usage events
+[0m13:05:50.073092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102f4f1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100d7d490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104a737c0>]}
+
+
+============================== 13:05:50.075847 | 07901f97-cc09-41d7-8813-5ef57941bb7c ==============================
+[0m13:05:50.075847 [info ] [MainThread]: Running with dbt=1.7.0
+[0m13:05:50.076144 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:05:50.351318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104a35fa0>]}
+[0m13:05:50.391640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059ada00>]}
+[0m13:05:50.392006 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m13:05:50.402995 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m13:05:50.437828 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:05:50.438063 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:05:50.441210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cc50d0>]}
+[0m13:05:50.447568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b88460>]}
+[0m13:05:50.447806 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m13:05:50.447990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b886d0>]}
+[0m13:05:50.448692 [info ] [MainThread]: 
+[0m13:05:50.449085 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:05:50.449552 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m13:05:50.449733 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:05:52.141493 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_clement_msika)
+[0m13:05:52.142398 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:05:52.673734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a084c0>]}
+[0m13:05:52.675473 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:05:52.676092 [info ] [MainThread]: 
+[0m13:05:52.680879 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m13:05:52.681690 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_clement_msika.dim_date_bis .................... [RUN]
+[0m13:05:52.682769 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_clement_msika, now model.toucan_toco_dbt.dim_date_bis)
+[0m13:05:52.683296 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m13:05:52.711806 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:05:52.712895 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 13:05:52.683686 => 13:05:52.712706
+[0m13:05:52.713175 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m13:05:52.723953 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m13:05:53.267423 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:05:53.268536 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "dev", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_clement_msika`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m13:05:53.718535 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:2eaf7507-fa8a-4711-996e-431f529bca0e&page=queryresults
+[0m13:05:56.005614 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 13:05:52.713337 => 13:05:56.005324
+[0m13:05:56.006606 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07901f97-cc09-41d7-8813-5ef57941bb7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105de7ee0>]}
+[0m13:05:56.007311 [info ] [Thread-1  ]: 1 of 1 OK created sql table model dbt_clement_msika.dim_date_bis ............... [[32mCREATE TABLE (5.7k rows, 0 processed)[0m in 3.32s]
+[0m13:05:56.007887 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m13:05:56.009574 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:05:56.009918 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m13:05:56.010238 [info ] [MainThread]: 
+[0m13:05:56.010567 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.56 seconds (5.56s).
+[0m13:05:56.011202 [debug] [MainThread]: Command end result
+[0m13:05:56.022394 [info ] [MainThread]: 
+[0m13:05:56.022726 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:05:56.022956 [info ] [MainThread]: 
+[0m13:05:56.023216 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:05:56.025150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102f4f1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059ada00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105938850>]}
+[0m13:05:56.025426 [debug] [MainThread]: Flushing usage events
+[0m13:07:26.278232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1028b0ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103342970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104733d90>]}
+
+
+============================== 13:07:26.280435 | f5007808-20a4-4103-8512-f6b4c1fa1959 ==============================
+[0m13:07:26.280435 [info ] [MainThread]: Running with dbt=1.7.0
+[0m13:07:26.280717 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/clementmsika/Desktop/dbt/dev/data-finance-dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:07:26.587284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046d3c40>]}
+[0m13:07:26.627043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10616afa0>]}
+[0m13:07:26.627438 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m13:07:26.640288 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m13:07:26.675128 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:07:26.675354 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:07:26.678434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065870d0>]}
+[0m13:07:26.685015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10636b3a0>]}
+[0m13:07:26.685234 [info ] [MainThread]: Found 1 model, 0 sources, 0 exposures, 0 metrics, 584 macros, 0 groups, 0 semantic models
+[0m13:07:26.685416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10634e1f0>]}
+[0m13:07:26.686088 [info ] [MainThread]: 
+[0m13:07:26.686469 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:07:26.686954 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_data-finance-staging'
+[0m13:07:26.687147 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:07:27.625094 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data-finance-staging, now list_data-finance-staging_dbt_clement_msika)
+[0m13:07:27.626081 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:07:28.181232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10634e1f0>]}
+[0m13:07:28.182919 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:07:28.183553 [info ] [MainThread]: 
+[0m13:07:28.189414 [debug] [Thread-1  ]: Began running node model.toucan_toco_dbt.dim_date_bis
+[0m13:07:28.190206 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_clement_msika.dim_date_bis .................... [RUN]
+[0m13:07:28.191257 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_data-finance-staging_dbt_clement_msika, now model.toucan_toco_dbt.dim_date_bis)
+[0m13:07:28.191769 [debug] [Thread-1  ]: Began compiling node model.toucan_toco_dbt.dim_date_bis
+[0m13:07:28.219003 [debug] [Thread-1  ]: Writing injected SQL for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:07:28.219997 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (compile): 13:07:28.192110 => 13:07:28.219798
+[0m13:07:28.220289 [debug] [Thread-1  ]: Began executing node model.toucan_toco_dbt.dim_date_bis
+[0m13:07:28.231107 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m13:07:29.175405 [debug] [Thread-1  ]: Writing runtime sql for node "model.toucan_toco_dbt.dim_date_bis"
+[0m13:07:29.176659 [debug] [Thread-1  ]: On model.toucan_toco_dbt.dim_date_bis: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "default", "target_name": "dev", "node_id": "model.toucan_toco_dbt.dim_date_bis"} */
+
+  
+    
+
+    create or replace table `data-finance-staging`.`dbt_clement_msika`.`dim_date_bis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  day,
+  is_month_last_day,
+  year,
+  -- format quarter
+  quarter_number,
+ EXTRACT(year FROM day) || '-Q' || CAST(EXTRACT(quarter FROM day) AS STRING)
+
+     AS quarter,
+  
+  -- format month
+  month_number,
+EXTRACT(year FROM day) || '-' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(month FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(month FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(month FROM day) AS STRING)
+        END
+     AS month,
+  
+  -- format week
+  week_number,
+  EXTRACT(year FROM day) || '-w' ||
+        CASE WHEN LENGTH(CAST(EXTRACT(week(monday) FROM day) AS STRING))>1 
+            THEN CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        ELSE '0' || CAST(EXTRACT(week(monday) FROM day) AS STRING)
+        END
+
+     AS week,
+
+  -- Date parts
+
+  CASE WHEN DATE_TRUNC(DATE(day), year) = DATE_TRUNC(DATE(CURRENT_DATE()), year) THEN 1 ELSE 0 END
+
+      as date_is_current_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_last_year,
+  CASE WHEN DATE_TRUNC(DATE(day),year) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 year), year) THEN 1 ELSE 0 END
+
+     as date_is_next_year,
+
+  CASE WHEN DATE_TRUNC(DATE(day), quarter) = DATE_TRUNC(DATE(CURRENT_DATE()), quarter) THEN 1 ELSE 0 END
+
+     as date_is_current_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_last_quarter,
+  CASE WHEN DATE_TRUNC(DATE(day),quarter) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 quarter), quarter) THEN 1 ELSE 0 END
+
+     as date_is_next_quarter,
+  
+  CASE WHEN DATE_TRUNC(DATE(day), month) = DATE_TRUNC(DATE(CURRENT_DATE()), month) THEN 1 ELSE 0 END
+
+     as date_is_current_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_last_month,
+  CASE WHEN DATE_TRUNC(DATE(day),month) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 month), month) THEN 1 ELSE 0 END
+
+     as date_is_next_month,
+  
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_SUB(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_last_week,
+  CASE WHEN DATE_TRUNC(DATE(day), week(monday)) = DATE_TRUNC(DATE(CURRENT_DATE()), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_current_week,
+  CASE WHEN DATE_TRUNC(DATE(day),week(monday)) = DATE_TRUNC(DATE_ADD(DATE(CURRENT_DATE()), INTERVAL 1 week), week(monday)) THEN 1 ELSE 0 END
+
+     as date_is_next_week,
+
+
+  CASE
+            WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 week), week(monday)) THEN 1
+            ELSE 0 END
+             as date_is_after_this_week,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 month), month) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_month,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 quarter), quarter) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_quarter,
+  CASE
+                    WHEN DATE(day) >= DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 year), year) THEN 1
+                    ELSE 0 END
+             as date_is_after_this_year,
+
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, year), INTERVAL 1 year), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_year,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, month), INTERVAL 1 month), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_month,
+  CASE WHEN DATE(day) = DATE_SUB(DATE_ADD(DATE_TRUNC(day, quarter), INTERVAL 1 quarter), INTERVAL 1 DAY) THEN 1 ELSE 0 END
+
+ as date_is_last_day_of_quarter,
+
+
+
+
+
+FROM (
+  SELECT
+    day,
+    -- year
+    EXTRACT(year
+    FROM
+      day) AS year,
+    -- get quarter
+    EXTRACT(QUARTER
+    FROM
+      day) AS quarter_number,
+    -- get month
+    EXTRACT(month
+    FROM
+      day) AS month_number,
+    -- is last day of the month
+    CASE
+      WHEN day = DATE_SUB(DATE_TRUNC(DATE_ADD(day, INTERVAL 1 MONTH), MONTH), INTERVAL 1 DAY) THEN TRUE
+    ELSE
+    FALSE
+  END
+    AS is_month_last_day,
+    -- get week (EU)
+    EXTRACT(week
+    FROM
+      day) AS week_number
+  FROM
+    UNNEST(GENERATE_DATE_ARRAY('2010-01-01',DATE_SUB(DATE_TRUNC(DATE_ADD(CURRENT_DATE(), INTERVAL 1 YEAR), MONTH),
+ INTERVAL 1 DAY), INTERVAL 1 day)) day
+  ORDER BY
+    day DESC )
+    );
+  
+[0m13:07:29.422154 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-finance-staging&j=bq:EU:67d57454-c34b-4999-8b6c-0609ec1762fc&page=queryresults
+[0m13:07:31.869623 [debug] [Thread-1  ]: Timing info for model.toucan_toco_dbt.dim_date_bis (execute): 13:07:28.220452 => 13:07:31.869375
+[0m13:07:31.870503 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5007808-20a4-4103-8512-f6b4c1fa1959', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10662cbe0>]}
+[0m13:07:31.871116 [info ] [Thread-1  ]: 1 of 1 OK created sql table model dbt_clement_msika.dim_date_bis ............... [[32mCREATE TABLE (5.7k rows, 0 processed)[0m in 3.68s]
+[0m13:07:31.871684 [debug] [Thread-1  ]: Finished running node model.toucan_toco_dbt.dim_date_bis
+[0m13:07:31.873189 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:07:31.873465 [debug] [MainThread]: Connection 'model.toucan_toco_dbt.dim_date_bis' was properly closed.
+[0m13:07:31.873750 [info ] [MainThread]: 
+[0m13:07:31.874058 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.19 seconds (5.19s).
+[0m13:07:31.874666 [debug] [MainThread]: Command end result
+[0m13:07:31.884408 [info ] [MainThread]: 
+[0m13:07:31.884709 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:07:31.884935 [info ] [MainThread]: 
+[0m13:07:31.885191 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:07:31.886575 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.6381774, "process_user_time": 1.562121, "process_kernel_time": 0.154369, "process_mem_max_rss": "136626176", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:07:31.886997 [debug] [MainThread]: Command `dbt run` succeeded at 13:07:31.886910 after 5.64 seconds
+[0m13:07:31.887296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1028b0ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060e8310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10634e040>]}
+[0m13:07:31.887558 [debug] [MainThread]: Flushing usage events
