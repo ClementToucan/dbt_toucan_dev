@@ -1,6 +1,3 @@
-{{ config(materialized='table')  }}
-
-
 WITH all_shops AS (
 
 SELECT

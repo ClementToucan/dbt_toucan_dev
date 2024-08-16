@@ -42,3 +42,5 @@ SELECT
     brand_id
 
 FROM all_products
+
+ORDER BY 1

@@ -37,4 +37,4 @@ SELECT
 
 FROM all_brands_table
 
-
+ORDER BY 1
