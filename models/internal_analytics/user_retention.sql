@@ -123,7 +123,7 @@ ORDER BY 1
 
 SELECT
 
-    cohort_date,
+    a.day AS cohort_date,
 
     CASE WHEN new_users_day_one > 0 THEN CAST(nb_users_retained_day_one AS FLOAT64) / CAST(new_users_day_one AS FLOAT64)
     ELSE NULL
@@ -168,46 +168,11 @@ SELECT
 
 
 
-FROM second_retention_table
+FROM `utils.dim_date` a 
 
+LEFT JOIN  second_retention_table b ON b.cohort_date = a.day
 
-UNION ALL
-
-SELECT
-
-    day,
-
-    NULL AS retention_day_one,
-
-    NULL AS new_users_day_one,
-
-    NULL AS nb_users_retained_day_one,
-
-    NULL AS new_users_day_seven,
-
-    NULL AS nb_users_retained_day_seven,
-
-    NULL AS new_users_day_fourteen,
-
-    NULL AS nb_users_retained_day_fourteen,
-
-    NULL AS new_users_day_thirty,
-
-    NULL AS nb_users_retained_day_thirty,
-
-    NULL AS new_users_year_one,
-
-    NULL AS nb_users_retained_year_one
-
-FROM `utils.dim_date` a
-
-WHERE a.day NOT IN (SELECT DISTINCT cohort_date FROM second_retention_table)
-
-AND a.day BETWEEN (SELECT MIN(cohort_date) FROM second_retention_table) AND (SELECT MAX(cohort_date) FROM second_retention_table)
-
-
+WHERE a.day BETWEEN (SELECT MIN(cohort_date) FROM second_retention_table) AND (SELECT MAX(cohort_date) FROM second_retention_table)
 
 ORDER BY 1
-
-
 

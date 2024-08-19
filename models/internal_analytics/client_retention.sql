@@ -144,7 +144,7 @@ ORDER BY 1
 
 SELECT
 
-    cohort_date,
+    day AS cohort_date,
 
     CASE WHEN new_clients_day_one > 0 THEN CAST(nb_clients_retained_day_one AS FLOAT64) / CAST(new_clients_day_one AS FLOAT64)
     ELSE NULL
@@ -188,12 +188,13 @@ SELECT
 
 
 
-FROM second_retention_table
+FROM `utils.dim_date` a  
 
+
+LEFT JOIN second_retention_table b ON b.cohort_date = a.day
+
+
+WHERE a.day BETWEEN (SELECT MIN(cohort_date) FROM second_retention_table) AND (SELECT MAX(cohort_date) FROM second_retention_table)
 
 ORDER BY 1
-
-
-
-
 
