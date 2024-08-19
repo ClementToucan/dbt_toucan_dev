@@ -161,7 +161,7 @@ SELECT
     ELSE NULL
     END AS retention_year_one,
 
-    new_users_year_one
+    new_users_year_one,
 
     nb_users_retained_year_one
 
