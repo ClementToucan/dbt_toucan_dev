@@ -12,15 +12,17 @@ SELECT
 
     CASE
       WHEN mp_event_name = 'Story Opened' THEN 'Stories'
+      WHEN mp_event_name IN ('Small App report', 'Small App', 'Small App Opened', 'Small App slide') THEN 'Small App'
+      WHEN mp_event_name = 'Error message' THEN 'Error'
+      WHEN mp_event_name = 'Instance Login' THEN 'Login'
       WHEN mp_event_name = 'Home Opened' THEN 'Homepage'
-      WHEN mp_event_name = 'Execsum Preview' THEN 'PDF Report'
-      WHEN mp_event_name = 'Home preview' THEN 'Send Home by Mail'
-      WHEN mp_event_name = 'Personal report viewed' THEN 'My Favorites'
-      WHEN mp_event_name = 'Data Wall Displayed' THEN 'Datawall'
-      WHEN mp_event_name = 'Report sent by email' THEN 'Stories shared by Mail'
-      ELSE 'Unknown Event'
+      WHEN mp_event_name = 'Execsum Preview' THEN 'Executive Summary Preview'
+      WHEN mp_event_name = 'Exploration filter loaded' THEN 'Exploration Filter'
+      WHEN mp_event_name = 'TableChart displayed' THEN 'Table Chart'
+      WHEN mp_event_name = 'Logout' THEN 'Logout'
+      WHEN mp_event_name IN ('Smart editor', 'Settings', 'Additional Panel', 'Dataset configuration') THEN mp_event_name
+      ELSE 'Other Events'
     END AS interactions
-
 
 
 FROM data-finance-staging.mixpanel.raw__mp_master_event
