@@ -64,7 +64,7 @@ WHERE DATE(day) BETWEEN (SELECT MIN(cohort_date) FROM cohort_table) AND (SELECT 
 
 ),
 
-first_retention_table AS (
+user_activity_segment_table AS (
 
 SELECT
 
@@ -87,9 +87,8 @@ LEFT JOIN activity_table c ON c.activity_date = a.ymd
 
 LEFT JOIN cohort_table b ON b.user_id = c.user_id
 
-),
+)
 
-second_retention_table AS (
 
 
 SELECT
@@ -119,19 +118,8 @@ SELECT
 
     
 
-FROM first_retention_table
+FROM user_activity_segment_table
 
 GROUP BY 1,2
-
-
-)
-
-SELECT
-
-    *
-
-FROM second_retention_table
-
-ORDER BY 1,2
 
 

@@ -1,4 +1,5 @@
-{{ config(materialized='table')   }}
+{{config(materialized='table')}}
+
 
 WITH user_table AS (
 
@@ -7,7 +8,20 @@ SELECT
 
     distinct_id AS user_id,
 
-    time
+    time,
+
+    CASE
+      WHEN mp_event_name = 'Story Opened' THEN 'Stories'
+      WHEN mp_event_name = 'Home Opened' THEN 'Homepage'
+      WHEN mp_event_name = 'Execsum Preview' THEN 'PDF Report'
+      WHEN mp_event_name = 'Home preview' THEN 'Send Home by Mail'
+      WHEN mp_event_name = 'Personal report viewed' THEN 'My Favorites'
+      WHEN mp_event_name = 'Data Wall Displayed' THEN 'Datawall'
+      WHEN mp_event_name = 'Report sent by email' THEN 'Stories shared by Mail'
+      ELSE 'Unknown Event'
+    END AS interactions
+
+
 
 FROM data-finance-staging.mixpanel.raw__mp_master_event
 
@@ -20,6 +34,7 @@ cohort_table AS (
 SELECT
 
     user_id,
+
 
     MIN(DATE(time)) AS cohort_date 
 
@@ -37,12 +52,14 @@ SELECT
 
     user_id,
 
+    interactions,
+
 
     DATE(time) AS activity_date 
 
 FROM user_table
 
-GROUP BY 1,2
+GROUP BY 1,2,3
 
 
 
@@ -63,7 +80,7 @@ WHERE DATE(day) BETWEEN (SELECT MIN(cohort_date) FROM cohort_table) AND (SELECT 
 
 ),
 
-user_activity_segment_table AS (
+first_user_activity_table AS (
 
 SELECT
 
@@ -75,7 +92,9 @@ SELECT
 
     activity_date,
 
-    LAG(activity_date) OVER (PARTITION BY c.user_id ORDER BY activity_date) AS previous_activity_date
+    interactions,
+
+    LAG(activity_date) OVER (PARTITION BY c.user_id, interactions ORDER BY activity_date) AS previous_activity_date
 
 
 
@@ -86,12 +105,20 @@ LEFT JOIN activity_table c ON c.activity_date = a.ymd
 
 LEFT JOIN cohort_table b ON b.user_id = c.user_id
 
+WHERE interactions IS NOT NULL
+
 )
 
 
 SELECT
 
-    ymd,
+    FORMAT_DATE('%Y', DATE(ymd)) AS y,
+
+    FORMAT_DATE('%V', DATE(ymd)) AS week_number,
+
+    DATE_TRUNC(DATE(ymd), WEEK) AS week_start,
+
+    interactions,
 
     COUNT(DISTINCT(CASE WHEN DATE(cohort_date) = DATE(activity_date) THEN user_id ELSE NULL END)) AS new_users,
 
@@ -114,10 +141,8 @@ SELECT
 
     
 
-FROM user_activity_segment_table
+FROM first_user_activity_table
 
-GROUP BY 1
+GROUP BY 1,2,3,4
 
-ORDER BY 1
-
-
+ORDER BY 1,2
