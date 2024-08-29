@@ -33,7 +33,7 @@ SELECT
 
 
 
-FROM dbt_clement_msika.dim_instances
+FROM {{ref('dim_instances')}}
 
 WHERE instance NOT IN ('robomat-preprod', 'willaman.', 'lizee', 'rugby', 'procivis-toucantoco-com.translate.goog', 'github', 'cgi.', 'aws-demo','dashboard-lengo-ai.translate.goog',
 'sandbox-test-move-duplicate', 'snowflake', 'alcopa--auction-toucantoco-com.translate.goog', 'github', 'nanoblue', 'systra','civical', 'codata', 'prerequis','nanoblue', 'systra','civical', 'codata',
