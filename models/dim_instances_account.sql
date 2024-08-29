@@ -36,8 +36,7 @@ SELECT
 FROM {{ref('dim_instances')}}
 
 WHERE instance NOT IN ('robomat-preprod', 'willaman.', 'lizee', 'rugby', 'procivis-toucantoco-com.translate.goog', 'github', 'cgi.', 'aws-demo','dashboard-lengo-ai.translate.goog',
-'sandbox-test-move-duplicate', 'snowflake', 'alcopa--auction-toucantoco-com.translate.goog', 'github', 'nanoblue', 'systra','civical', 'codata', 'prerequis','nanoblue', 'systra','civical', 'codata',
-  'bord-eau-village')
+'sandbox-test-move-duplicate', 'snowflake', 'alcopa--auction-toucantoco-com.translate.goog', 'github', 'nanoblue', 'systra','civical', 'codata', 'prerequis','nanoblue', 'systra','civical', 'codata')
 
 -- AND frontend_vhost NOT IN ('cegid-optim.toucantoco.guru')
 
@@ -145,6 +144,7 @@ SELECT
     WHEN frontend_vhost = 'monnier-energies' THEN 'monnier-energies.toucantoco.com'
     WHEN frontend_vhost = 'showagroup' THEN 'showagroup.toucantoco.com'
     WHEN frontend_vhost = 'teamwill' THEN 'teamwill.toucantoco.com'
+    WHEN frontend_vhost = 'bord-eau-village' THEN 'bord-eau-village.toucantoco.com'
     ELSE frontend_vhost
     END AS frontend_vhost
 
